@@ -1,12 +1,14 @@
 package com.yonyou.diamondrank.activities;
 
 import android.Manifest;
+import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -237,6 +239,14 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                 Picasso.with(this).load(data.getData()).fit().into(userAvator);
                 imgFile = new File(data.getData().getPath());
+
+
+                if (Build.VERSION.SDK_INT <Build.VERSION_CODES.M){
+                    imgFile = new File(getRealPathFromURI(data.getData()));
+                }else {
+                    imgFile = new File(data.getData().getPath());
+                }
+
             }
         }
     }
@@ -245,13 +255,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         String res = null;
         String[] proj = { MediaStore.Images.Media.DATA };
         Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
-        if(cursor.moveToFirst()){;
+        if(cursor.moveToFirst()){
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             res = cursor.getString(column_index);
         }
+
         cursor.close();
         return res;
     }
+
 
     public void startCamera(){
         // 指定相机拍摄照片保存地址
@@ -295,9 +307,21 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
      private void showPhotoAlbum(){
          //跳转到系统相册
-         Intent intent = new Intent(Intent.ACTION_PICK, null);
-         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        // Intent intent = new Intent(Intent.ACTION_PICK, null);
+
+         Intent intent = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+
          intent.setAction(Intent.ACTION_GET_CONTENT);
+
+
+
+//         if (Build.VERSION.SDK_INT>Build.VERSION_CODES.M){
+//
+//         }
+//
+
+
          startActivityForResult(intent, ALBUM_REQUEST_CODE);
      }
 
@@ -406,7 +430,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         message.what = 1;
                         myHandler.sendMessage(message);
 
-
                     }
 
                 } else {
@@ -440,7 +463,20 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     public void onOtherButtonClick(ActionSheet actionSheet, int index) {
 
         if (index == 0) {
-            showPhotoAlbum();
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED)
+            {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        CAMERA_REQUEST_CODE);
+
+            }else {
+                showPhotoAlbum();
+            }
+
+
+
         } else if (index == 1) {
 
             if (ContextCompat.checkSelfPermission(RegisterActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
