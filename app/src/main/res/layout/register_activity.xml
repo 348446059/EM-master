@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:background="@mipmap/icon_close"/>
+  <RelativeLayout
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <FrameLayout
+          android:layout_centerInParent="true"
+          android:layout_width="wrap_content"
+          android:layout_marginTop="40dp"
+          android:layout_height="wrap_content">
+
+          <com.yonyou.diamondrank.widget.RoundAngleImageView
+              android:id="@+id/user_avator"
+              android:layout_gravity="center"
+              android:layout_width="80dp"
+              android:layout_height="80dp"
+              android:clickable="true"
+              app:roundWidth="40dp"
+              app:roundHeight="40dp"
+              android:src="@mipmap/icon_login_photo"/>
+          <Button
+              android:id="@+id/add_img"
+              android:layout_width="20dp"
+              android:layout_height="20dp"
+              android:layout_marginLeft="60dp"
+              android:background="@mipmap/icon_add"/>
+
+      </FrameLayout>
+  </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_login_name"
+            style="@style/edit_text"
+            app:fixedText="登录名"
+            android:hint="(请输入您的账号)"/>
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_user_name"
+            style="@style/edit_text"
+            app:fixedText="用户名"
+            android:hint="(请输入真实姓名)"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.yonyou.diamondrank.views.FixedEditText
+                android:id="@+id/et_user_position"
+                style="@style/edit_text"
+                android:layout_alignParentLeft="true"
+                app:fixedText="部门/职位"
+                android:enabled="false"
+                android:hint="(请选择部门及职位信息)"/>
+            <Button
+                android:id="@+id/select_btn"
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:background="@mipmap/icon_down" />
+        </RelativeLayout>
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_user_email"
+            style="@style/edit_text"
+            android:inputType="textWebEmailAddress"
+            app:fixedText="邮箱"
+            android:hint="(请输本入公司邮箱)"/>
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_user_phone"
+            style="@style/edit_text"
+            android:inputType="number"
+            app:fixedText="手机号"
+            android:hint="(请输入手机号)"/>
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_user_password"
+            style="@style/edit_text"
+            app:fixedText="密码"
+            android:inputType="textPassword"
+            android:hint="(请输入至少6位密码)"/>
+        <com.yonyou.diamondrank.views.FixedEditText
+            android:id="@+id/et_user_again"
+            style="@style/edit_text"
+            app:fixedText="确认密码"
+            android:inputType="textPassword"
+            android:hint="(请再次输入密码)"/>
+    </LinearLayout>
+
+<Button
+    android:id="@+id/register_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="注册"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="@color/btn_bkgrd_blue_new"/>
+
+</LinearLayout>

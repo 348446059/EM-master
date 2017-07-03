@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg1280">
+
+
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:padding="20px"
+        android:background="@mipmap/icon_close"/>
+
+
+    <Button
+        android:id="@+id/auto_btn"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+
+        android:background="@mipmap/sm_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:text="点击扫码"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"/>
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.yonyou.diamondrank.views.CleanEditText
+                android:id="@+id/set_domain"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="服务器域名或IP地址"/>
+
+            <com.yonyou.diamondrank.views.CleanEditText
+                android:id="@+id/set_portal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:layout_marginTop="100dp"
+                android:textColor="#ffffff"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="端口"/>
+
+        </LinearLayout>
+
+
+    <com.yonyou.diamondrank.views.CleanEditText
+        android:id="@+id/set_appkey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="消息推送AppKey获取"/>
+    <com.yonyou.diamondrank.views.CleanEditText
+        android:id="@+id/set_appscret"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="消息推送Message Secret"/>
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#1E4D57"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:text="保存"
+        android:textSize="16sp"/>
+        </LinearLayout>
+</LinearLayout>

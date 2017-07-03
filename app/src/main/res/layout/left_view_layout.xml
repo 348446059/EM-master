@@ -1,0 +1,90 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="70dp"
+    android:background="@color/btn_bkgrd_black_new">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:paddingLeft="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.yonyou.diamondrank.widget.RoundAngleImageView
+            android:id="@+id/iv_bottom"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_logo"
+            android:layout_marginBottom="10dp"
+            app:roundWidth="25dp"
+            app:roundHeight="25dp"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="用心做产品"/>
+            <TextView
+                android:id="@+id/user_position"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@string/log_in"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="项目开发中心-前端工程师"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_home"
+                android:scaleType="fitXY"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:text="切换部门"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--底部功能条-->
+    <include layout="@layout/left_view_bottom_layout"
+        android:id="@+id/bottom_view" />
+    <!--中间列表-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_view"
+        android:layout_below="@id/ll1"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@drawable/lv_click_selector"
+        android:divider="@null"
+        android:scrollbars="none"
+        android:textColor="#ffffff" />
+</RelativeLayout>

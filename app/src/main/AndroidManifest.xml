@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yonyou.diamondrank">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <application
+        android:name="com.yonyou.diamondrank.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/appicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--<meta-data-->
+            <!--android:name="UMENG_APPKEY"-->
+            <!--android:value="57958227e0f55a6265002ab5" >-->
+        <!--</meta-data>-->
+        <!--<meta-data-->
+            <!--android:name="UMENG_MESSAGE_SECRET"-->
+            <!--android:value="fcffcd358319ed5b185fb88fb3f47231" >-->
+        <!--</meta-data>-->
+        <activity
+            android:name="com.yonyou.diamondrank.activities.SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.yonyou.diamondrank.activities.CustomScanAct"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.yonyou.diamondrank.activities.LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity android:name="com.yonyou.diamondrank.activities.MainActivitys"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.yonyou.diamondrank.activities.VoteDetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity android:name="com.yonyou.diamondrank.activities.RegisterActivity"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.yonyou.diamondrank.activities.SetIPActivity"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.yonyou.diamondrank.activities.TestActivity"></activity>
+        <activity android:name="com.yonyou.diamondrank.activities.ImageBrowseActivity" />
+
+        <activity android:name="com.yonyou.diamondrank.activities.SettingActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+        <activity android:name="com.yonyou.diamondrank.activities.ModifActivity"
+             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.yonyou.diamondrank.activities.AddDepartmentActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.em.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+    </application>
+
+</manifest>

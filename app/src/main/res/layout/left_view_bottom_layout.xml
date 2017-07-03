@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="256dp"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="40dp"
+    >
+    <LinearLayout
+        android:id="@+id/set_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        >
+        <Button
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/icon_cog"/>
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cancel_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        >
+        <Button
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/icon_logout"/>
+        <TextView
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注销"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+</LinearLayout>

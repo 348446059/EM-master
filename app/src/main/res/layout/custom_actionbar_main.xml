@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/btn_bkgrd_black_new"
+    android:orientation="vertical" >
+
+    <!-- tittle 两边都有button -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 标题you侧的btn -->
+
+        <com.yonyou.diamondrank.widget.RoundAngleImageView
+            android:id="@+id/iv_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            app:roundWidth="17.5dp"
+            app:roundHeight="17.5dp"/>
+
+        <!-- 标题名称 -->
+
+        <TextView
+            android:id="@+id/tasktitlepanel_titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            style="@style/title"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/detail_btn"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="center"
+            android:textSize="16sp"
+            android:background="@drawable/shape_corner"
+            android:text="详情"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
